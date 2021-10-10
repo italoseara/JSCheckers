@@ -1,0 +1,119 @@
+:root {
+    --black-square: #555;
+    --white-square: #fff;
+    --black-piece: #292929;
+    --white-piece: #ddd;
+    --black-piece-outer: #1d1d1d;
+    --white-piece-outer: #ccc;
+    --prediction-outer: #ebe84d;
+    
+    --hint: #00000033;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+body {
+    background-image: linear-gradient(rgba(62, 20, 20, 0.4), rgba(62, 20, 20, 0.4)), url(back.jpg);
+    background-size: cover;
+    background-position: center;
+    font-family: Lato;
+    font-weight: 300;
+    position: relative;
+    height: 100vh;
+    color: #555;
+}
+
+.table {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.square {
+    width: 10vh;
+    height: 10vh;
+
+    float: left;
+
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+    user-select: none;
+}
+
+.square.white {
+    background-color: var(--white-square);
+}
+
+.square.black {
+    background-color: var(--black-square);
+}
+
+.piece {
+    width: 8.5vh;
+    height: 8.5vh;
+
+    border-radius: 50%;
+    box-shadow: 3px 3px 25px #000000e0;
+
+    user-select: none;
+}
+
+.piece.black {
+    background-color: var(--black-piece);
+    border: 1.5vh solid var(--black-piece-outer);
+}
+
+.piece.white {
+    background-color: var(--white-piece);
+    border: 1.5vh solid var(--white-piece-outer);
+}
+
+.prediction {
+    content: "";
+
+    width: 8.5vh;
+    height: 8.5vh;
+    
+    background-color: transparent;
+    border-radius: 50%;
+
+}
+
+.prediction::before {
+    content: "";
+    display: block;
+    position: relative;
+
+    width: 3.5vh;
+    height: 3.5vh;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    background-color: var(--hint);
+    border-radius: 50%;
+}
+
+
+.clone {
+    pointer-events: none;
+}
