@@ -97,6 +97,12 @@ function movement(e, element) {
             
             document.querySelector(`.active`).classList.toggle("active");
             document.querySelector(`#player-${gameTurn}`).classList.toggle("active");
+
+            blackScore = document.querySelectorAll(".piece.black:not(.clone)").length;
+            whiteScore = document.querySelectorAll(".piece.white:not(.clone)").length;
+
+            document.querySelector("#score-black").textContent = blackScore;
+            document.querySelector("#score-white").textContent = whiteScore;
         })
     })
 }

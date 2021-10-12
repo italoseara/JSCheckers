@@ -1,5 +1,7 @@
 let rows, moving, clone, prediction;
 
+let blackScore, whiteScore;
+
 let xRel = 0;
 let yRel = 0;
 let table = [];
@@ -41,9 +43,11 @@ for (let i = 0; i < 8; i++) {
 function restartGame() {
     gameStart.play();
     
-    // DRAW PIECES
     gameTurn = "white";
+    document.querySelector("#score-black").textContent = 12;
+    document.querySelector("#score-white").textContent = 12;
     
+    // DRAW PIECES
     if (document.querySelector(`.active`))
         document.querySelector(`.active`).classList.toggle("active");
         

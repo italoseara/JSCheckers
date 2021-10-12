@@ -75,6 +75,26 @@ i {
     width: 40vh;
 }
 
+.player-score {
+    position: absolute;
+
+    right: 50%;
+
+    transform: translateX(50%);
+    font-size: 8vh;
+    font-weight: 100;
+
+    color: #EB4D4D;
+}
+
+#score-black {
+    top: 5vh;
+}
+
+#score-white {
+    bottom: 5vh;
+}
+
 .player-name {
     position: absolute;
 
@@ -89,12 +109,11 @@ i {
 }
 
 #player-black {
-    margin-top: 8vh;
+    top: 16vh;
 }
 
 #player-white {
-    bottom: 0px;
-    margin-bottom: 8vh;
+    bottom: 16vh;
 }
 
 .player-name.active::after {
