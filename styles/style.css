@@ -1,6 +1,6 @@
 :root {
-    --black-square: #555;
-    --white-square: #fff;
+    --black-square: #d14444;
+    --white-square: #f1f1f1;
     --black-piece: #292929;
     --white-piece: #ddd;
     --black-piece-outer: #1d1d1d;
@@ -23,7 +23,7 @@
 }
 
 body {
-    background-image: linear-gradient(rgba(62, 20, 20, 0.4), rgba(62, 20, 20, 0.4)), url(back.jpg);
+    background-image: linear-gradient(rgba(62, 20, 20, 0.4), rgba(62, 20, 20, 0.4)), url(images/back.jpg);
     background-size: cover;
     background-position: center;
     font-family: Lato;
@@ -33,14 +33,106 @@ body {
     color: #555;
 }
 
-.table {
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+button:focus {
+    outline: none;
+}
+
+i {
+    margin-right: 1vh;
+    
+    transition: margin 0.3s;
+    
+    font-size: 3.6vh;
+    line-height: 1;
+    color: #EB4D4D;
+}
+
+#gameInterface {
     position: absolute;
+    overflow: hidden;
+
+    width: 120vh;
+
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #fff;
+    
+    background-color: #f1f1f1;
     box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3);
-    overflow: hidden;
+}
+
+.menu {
+    position: relative;
+    float: right;
+
+    height: 80vh;
+    width: 40vh;
+}
+
+.player-name {
+    position: absolute;
+
+    right: 50%;
+
+    transform: translateX(50%);
+    text-transform: uppercase;
+    font-size: 3.1vh;
+    font-weight: 300;
+
+    letter-spacing: 2px;
+}
+
+#player-black {
+    margin-top: 8vh;
+}
+
+#player-white {
+    bottom: 0px;
+    margin-bottom: 8vh;
+}
+
+.player-name.active::after {
+    content: "\2022";
+    font-size: 4.5vh;
+    position: absolute;
+    color: #EB4D4D;
+    top: -1.2vh;
+    right: -3.3vh;
+}
+
+.btn-newgame {
+    position: absolute;
+
+    right: 50%;
+    top: 50%;
+
+    width: 100%;
+
+    transform: translate(50%, -50%);
+    transition: background-color 0.3s, color 0.3s;
+
+    text-transform: uppercase;
+    font-size: 3.6vh;
+    font-weight: 300;
+    font-family: Lato;
+
+    letter-spacing: 2px;
+
+    color: #555;
+}
+
+.btn-newgame:hover { font-weight: 600; }
+.btn-newgame:hover i { margin-right: 2vh; }
+
+.table {
+    float: left;
+    box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3);
 }
 
 .square {
@@ -89,12 +181,11 @@ body {
 .prediction {
     content: "";
 
-    width: 8.5vh;
-    height: 8.5vh;
+    width: 10vh;
+    height: 10vh;
     
     background-color: transparent;
     border-radius: 50%;
-
 }
 
 .prediction::before {
